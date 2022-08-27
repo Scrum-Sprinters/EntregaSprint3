@@ -1,24 +1,29 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
-import javax.persistence.*;
+//import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Empleado {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+//  @Id
+//  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private String Nombre;
-  private String Correo;
-  private String Role;
-  private long nit_Empresa;
+  private String nombre;
+  private String correo;
+  //private String Role;
+    private EnumRole rol;
+  private long empresa_nit;
   
-  public ClaseEmpleado(long id, String Nombre, String Correo, String Role, long Empresa) {
+  //public Empleado(long id, String Nombre, String Correo, String Role, long Empresa) {
+  public Empleado(long id, String Nombre, String Correo, EnumRole Role, long Empresa) {
         this.id = id;
-        this.Nombre = Nombre;
-        this.Correo = Correo;
-        this.Role = Role;
-        this.nit_Empresa = Empresa;
+        this.nombre = Nombre;
+        this.correo = Correo;
+        this.rol = Role;
+
+        this.empresa_nit = Empresa;
   }
 
+  public Empleado(){
+  }
   public long getId() {
       return id;
   }
@@ -28,21 +33,23 @@ public class Empleado {
   }
 
   public String getNombre() {
-      return Nombre;
+      return nombre;
   }
 
   public void setNombre(String Nombre) {
-      this.Nombre = Nombre;
+      this.nombre = Nombre;
   }
 
   public String getCorreo() {
-      return Correo;
+      return correo;
   }
 
   public void setCorreo(String Correo) {
-      this.Correo = Correo;
+      this.correo = Correo;
   }
 
+
+  /*
   public String getRole() {
       return Role;
   }
@@ -50,12 +57,21 @@ public class Empleado {
   public void setRole(String Role) {
       this.Role = Role;
   }
-
-  public long getNit_Empresa() {
-      return nit_Empresa;
+*/
+  public EnumRole getRol() {
+      return rol;
   }
 
-  public void setNit_Empresa(long nit_Empresa) {
-      this.nit_Empresa = nit_Empresa;
+    public void setRol(EnumRole Role) {
+        this.rol = Role;
+    }
+
+
+  public long getEmpresaNit() {
+      return empresa_nit;
+  }
+
+  public void setEmpresaNit(long empresa_nit) {
+      this.empresa_nit = empresa_nit;
   }
 }

@@ -1,37 +1,37 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
 
-package Entidades;
-
-import net.bytebuddy.asm.Advice;
-
-import javax.persistence.*;
+//import net.bytebuddy.asm.Advice;
+//import javax.persistence.*;
 
 /**Para definir que esta clase es una entidad**/
-@Entity
+//@Entity
 public class Empresa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
-    //Atributos
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private long nit;
     private String nombre;
     private String direccion;
-    private int telefono;
-    private int nit;
-    private String pais;
-    private String ciudad;
-    private String fechacreacion;
-    @OneToMany(mappedBy = "empleado")
-    @JoinColumn(name = "empleado_id")
+    private String telefono;
+
+    //private String pais;
+    //private String ciudad;
+//    private String fechaCreacion;
+//    @OneToMany(mappedBy = "empleado")
+//    @JoinColumn(name = "empleado_id")
     private Empleado empleado;
 
     //Constructor
-    public Empresa(Long id, String nombre, String direccion, int telefono, int nit) {
+    public Empresa(Long id, String nombre, String direccion, String telefono, long nit) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.nit = nit;
+    }
+
+    public Empresa() {
+
     }
 
     //Metodo
@@ -48,11 +48,11 @@ public class Empresa {
         return direccion;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public int getNit() {
+    public Long getNit() {
         return nit;
     }
 
@@ -68,11 +68,11 @@ public class Empresa {
         this.direccion = direccion;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public void setNit(int nit) {
+    public void setNit(long nit) {
         this.nit = nit;
     }
 }
