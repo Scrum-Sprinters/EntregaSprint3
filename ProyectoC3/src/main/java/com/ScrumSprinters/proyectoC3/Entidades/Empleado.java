@@ -1,6 +1,5 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
 //import javax.persistence.*;
-
 //@Entity
 public class Empleado {
 //  @Id

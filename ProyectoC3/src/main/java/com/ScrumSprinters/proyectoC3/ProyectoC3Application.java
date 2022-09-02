@@ -4,14 +4,16 @@ import com.ScrumSprinters.proyectoC3.Entidades.Empleado;
 import com.ScrumSprinters.proyectoC3.Entidades.Empresa;
 import com.ScrumSprinters.proyectoC3.Entidades.EnumRole;
 import com.ScrumSprinters.proyectoC3.Entidades.MovimientoDinero;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class ProyectoC3Application {
 
 	public static void main(String[] args) {
 
-		//SpringApplication.run(ProyectoC3Application.class, args);
-
+		SpringApplication.run(ProyectoC3Application.class, args);
+/*
 		Empleado empleado1 = new Empleado();
 		empleado1.setNombre("Elon Musk");
 		empleado1.setCorreo("elon@tesla.com");
@@ -32,6 +34,7 @@ public class ProyectoC3Application {
 		empresa1.setDireccion("1 Tesla Road Austin, TX 78725");
 		empresa1.setTelefono("505000");
 		empresa1.setNit(10023345);
+
 		System.out.println("\n");
 		System.out.println("------------- EMPRESA ---------------------");
 		System.out.println("Nombre: " + empresa1.getNombre());
@@ -53,7 +56,7 @@ public class ProyectoC3Application {
 		System.out.println("Empleado: " + movimiento1.getEmpleadoId());
 		System.out.println("Empresa: " + movimiento1.getEmpresaNit());
 
-
+*/
 	}
 
 }

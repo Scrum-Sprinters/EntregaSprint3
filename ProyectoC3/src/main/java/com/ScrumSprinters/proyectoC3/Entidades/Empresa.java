@@ -3,7 +3,8 @@ package com.ScrumSprinters.proyectoC3.Entidades;
 //import net.bytebuddy.asm.Advice;
 //import javax.persistence.*;
 
-/**Para definir que esta clase es una entidad**/
+import javax.persistence.*;
+
 //@Entity
 public class Empresa {
 //    @Id
