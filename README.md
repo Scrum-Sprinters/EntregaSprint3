@@ -1,2 +1,2 @@
-# EntregaSprint2
-Espacio para crear las tres clases de java requeridas en el Sprint2: Empresa, Empleado, MovimientoDinero
+# EntregaSprint3
+Espacio para crear los controladores y los servicios de las entidades creadas en el sprint 2
