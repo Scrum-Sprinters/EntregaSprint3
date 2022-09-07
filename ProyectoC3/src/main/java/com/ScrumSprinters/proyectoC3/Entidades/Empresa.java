@@ -2,6 +2,8 @@ package com.ScrumSprinters.proyectoC3.Entidades;
 
 import net.bytebuddy.asm.Advice;
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="Enterprise")
@@ -9,36 +11,42 @@ public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name="nit")
-    private long nit;
-    @Column(name="nombre")
+    @Column(name="name" , unique = true)
     private String nombre;
-    @Column(name="direccion")
-    private String direccion;
-    @Column(name="telefono")
+    @Column(name="document", unique = true)
+    private long nit;
+    @Column(name="phone")
     private String telefono;
+    @Column(name="address")
+    private String direccion;
 
-    //private String pais;
-    //private String ciudad;
-//    private String fechaCreacion;
-    //@OneToMany(mappedBy = "empleado")
-    //@JoinColumn(name = "empleado_id")
-    //private Empleado empleado;
+    @OneToMany(mappedBy = "empresa")
+    private List<Empleado> empleados;
+
+    @OneToMany(mappedBy = "empresa")
+    private List<MovimientoDinero> movimientoDineros;
+
+    @Column (name = "created_at")
+    private Date creado;
+
+    @Column (name = "updated_at")
+    private Date modificado;
 
     //Constructor
-    public Empresa(Long id, String nombre, String direccion, String telefono, long nit) {
+
+    public Empresa(Long id, long nit, String nombre, String direccion, String telefono, Date creado, Date modificado) {
         this.id = id;
+        this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.nit = nit;
+        this.creado = creado;
+        this.modificado = modificado;
     }
 
     public Empresa() {
 
     }
-
-    //Metodo
 
     public Long getId() {
         return id;
@@ -78,5 +86,36 @@ public class Empresa {
 
     public void setNit(long nit) {
         this.nit = nit;
+    }
+
+    public Date getCreado() {
+        return creado;
+    }
+
+    public void setCreado(Date creado) {
+        this.creado = creado;
+    }
+
+    public Date getModificado() {
+        return modificado;
+    }
+
+    public void setModificado(Date modificado) {
+        this.modificado = modificado;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", nit=" + nit +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", empleados=" + empleados +
+                ", movimientoDineros=" + movimientoDineros +
+                ", creado=" + creado +
+                ", modificado=" + modificado +
+                '}';
     }
 }

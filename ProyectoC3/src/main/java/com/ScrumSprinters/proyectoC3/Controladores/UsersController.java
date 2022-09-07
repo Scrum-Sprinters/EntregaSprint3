@@ -1,25 +1,23 @@
 package com.ScrumSprinters.proyectoC3.Controladores;
 
 import com.ScrumSprinters.proyectoC3.Entidades.Empleado;
-import com.ScrumSprinters.proyectoC3.Entidades.Empresa;
-import com.ScrumSprinters.proyectoC3.Servicios.EnterpriseService;
-import com.ScrumSprinters.proyectoC3.Servicios.UserService;
+import com.ScrumSprinters.proyectoC3.Servicios.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class UsersController {
-    UserService service;
+    EmployeeService service;
 
     public UsersController(){
-        this.service = new UserService();
+        this.service = new EmployeeService();
     }
 
 
     @GetMapping("/users")
     public List<Empleado> getAllEmpleado(){
-        return service.getAllEmpleado();
+        return service.getAllEmployees();
     }
 
     @PostMapping("/users")

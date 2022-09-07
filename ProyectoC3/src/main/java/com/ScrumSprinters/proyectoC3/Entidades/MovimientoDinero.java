@@ -1,32 +1,44 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "Movements")
+@Table(name = "Transaction")
 public class MovimientoDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "monto")
-    private Float monto;
-    @Column(name = "empleado_id")
-    private long empleado_id;
-    @Column(name = "empresa_nit")
-    private long empresa_nit;
-    @Column(name = "concepto")
-    private String concepto;
-    //@ManyToOne
-    //private Empleado empleado;
 
-    public MovimientoDinero(long empresa_nit, long empleado_id, Float monto, String concepto){
-        this.empresa_nit = empresa_nit;
-        this.empleado_id = empleado_id;
-        this.monto = monto;
-        this.concepto = concepto;
-    }
+    @Column(name = "concept")
+    private String concepto;
+
+    @Column(name = "amount")
+    private Float monto;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Empleado empleado;
+
+    @ManyToOne
+    @JoinColumn(name = "enterprise_id")
+    private Empresa empresa;
+
+    @Column (name = "created_at")
+    private Date creado;
+
+    @Column (name = "updated_at")
+    private Date modificado;
 
     public MovimientoDinero() {
 
+    }
+
+     public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getConcepto() {
@@ -45,19 +57,35 @@ public class MovimientoDinero {
         this.monto = monto;
     }
 
-    public long getEmpleadoId() {
-        return empleado_id;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setEmpleadoId(long empleado_id) {
-        this.empleado_id = empleado_id;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public long getEmpresaNit() {
-        return empresa_nit;
+    public Empresa getEmpresa() {
+        return empresa;
     }
 
-    public void setEmpresaNit(long empresa_nit) {
-        this.empresa_nit = empresa_nit;
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Date getCreado() {
+        return creado;
+    }
+
+    public void setCreado(Date creado) {
+        this.creado = creado;
+    }
+
+    public Date getModificado() {
+        return modificado;
+    }
+
+    public void setModificado(Date modificado) {
+        this.modificado = modificado;
     }
 }

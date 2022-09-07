@@ -1,18 +1,14 @@
 package com.ScrumSprinters.proyectoC3.Controladores;
 
-import com.ScrumSprinters.proyectoC3.Entidades.Empresa;
-import com.ScrumSprinters.proyectoC3.Servicios.EnterpriseService;
-import com.ScrumSprinters.proyectoC3.Servicios.MovimientoService;
+import com.ScrumSprinters.proyectoC3.Servicios.TransactionService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class MovimientoController {
-    MovimientoService service;
+    TransactionService service;
 
     public MovimientoController(){
-        this.service = new MovimientoService();
+        this.service = new TransactionService();
     }
 
     @PostMapping("/enterprises/{id}/movements")
