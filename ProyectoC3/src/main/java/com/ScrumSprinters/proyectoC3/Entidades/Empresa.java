@@ -1,26 +1,29 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
 
-//import net.bytebuddy.asm.Advice;
-//import javax.persistence.*;
-
+import net.bytebuddy.asm.Advice;
 import javax.persistence.*;
 
-//@Entity
+@Entity
+@Table(name="Enterprise")
 public class Empresa {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name="nit")
     private long nit;
+    @Column(name="nombre")
     private String nombre;
+    @Column(name="direccion")
     private String direccion;
+    @Column(name="telefono")
     private String telefono;
 
     //private String pais;
     //private String ciudad;
 //    private String fechaCreacion;
-//    @OneToMany(mappedBy = "empleado")
-//    @JoinColumn(name = "empleado_id")
-    private Empleado empleado;
+    //@OneToMany(mappedBy = "empleado")
+    //@JoinColumn(name = "empleado_id")
+    //private Empleado empleado;
 
     //Constructor
     public Empresa(Long id, String nombre, String direccion, String telefono, long nit) {

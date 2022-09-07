@@ -1,23 +1,26 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
-//import javax.persistence.*;
-//@Entity
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Users")
 public class Empleado {
-//  @Id
-//  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+  @Column(name = "nombre")
   private String nombre;
+  @Column(name = "correo")
   private String correo;
-  //private String Role;
-    private EnumRole rol;
+  @Column(name = "rol")
+  private EnumRole rol;
+  @Column(name = "empresa_nit")
   private long empresa_nit;
-  
-  //public Empleado(long id, String Nombre, String Correo, String Role, long Empresa) {
+
   public Empleado(long id, String Nombre, String Correo, EnumRole Role, long Empresa) {
         this.id = id;
         this.nombre = Nombre;
         this.correo = Correo;
         this.rol = Role;
-
         this.empresa_nit = Empresa;
   }
 
@@ -47,24 +50,13 @@ public class Empleado {
       this.correo = Correo;
   }
 
-
-  /*
-  public String getRole() {
-      return Role;
-  }
-
-  public void setRole(String Role) {
-      this.Role = Role;
-  }
-*/
   public EnumRole getRol() {
       return rol;
   }
 
-    public void setRol(EnumRole Role) {
+  public void setRol(EnumRole Role) {
         this.rol = Role;
     }
-
 
   public long getEmpresaNit() {
       return empresa_nit;
