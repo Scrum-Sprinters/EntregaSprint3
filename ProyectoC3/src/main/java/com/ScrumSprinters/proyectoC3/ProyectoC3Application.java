@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProyectoC3Application {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(ProyectoC3Application.class, args);
+        SpringApplication.run(ProyectoC3Application.class, args);
 /*
 		Empleado empleado1 = new Empleado();
 		empleado1.setNombre("Elon Musk");
@@ -57,6 +57,6 @@ public class ProyectoC3Application {
 		System.out.println("Empresa: " + movimiento1.getEmpresaNit());
 
 */
-	}
+    }
 
 }
