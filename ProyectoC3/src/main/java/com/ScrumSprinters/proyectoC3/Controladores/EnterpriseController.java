@@ -21,7 +21,7 @@ public class EnterpriseController {
         return service.getAllEnterprise();
     }
     @PostMapping("/enterprise")
-    public String postNewEnterprise(@RequestBody Empresa empresa){
+    public String saveEnterprise(@RequestBody Empresa empresa){
         service.saveEnterprise(empresa);
         return "Se ingresa empresa: " + empresa.toString();
     }

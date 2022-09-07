@@ -34,7 +34,7 @@ public class EmployeeService {
         repository.save(empleado);
     }
 
-    public void deleteEnterpriseById(Long id) {
+    public void deleteEmployeeById(Long id) {
         repository.deleteById(id);
 
     }

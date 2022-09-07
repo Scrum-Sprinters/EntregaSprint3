@@ -1,14 +1,17 @@
 package com.ScrumSprinters.proyectoC3.Controladores;
 
 import com.ScrumSprinters.proyectoC3.Servicios.TransactionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class MovimientoController {
+public class TransactionController {
+
+
+    @Autowired
     TransactionService service;
 
-    public MovimientoController(){
-        this.service = new TransactionService();
+    public TransactionController(){
     }
 
     @PostMapping("/enterprises/{id}/movements")
