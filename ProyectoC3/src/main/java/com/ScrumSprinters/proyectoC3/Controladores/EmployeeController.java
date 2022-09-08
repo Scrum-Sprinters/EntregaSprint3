@@ -1,7 +1,6 @@
 package com.ScrumSprinters.proyectoC3.Controladores;
 
 import com.ScrumSprinters.proyectoC3.Entidades.Empleado;
-import com.ScrumSprinters.proyectoC3.Entidades.Empresa;
 import com.ScrumSprinters.proyectoC3.Servicios.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

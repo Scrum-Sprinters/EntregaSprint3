@@ -104,6 +104,14 @@ public class Empresa {
         this.modificado = modificado;
     }
 
+    public List<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public List<MovimientoDinero> getMovimientoDineros() {
+        return movimientoDineros;
+    }
+
     @Override
     public String toString() {
         return "Empresa{" +

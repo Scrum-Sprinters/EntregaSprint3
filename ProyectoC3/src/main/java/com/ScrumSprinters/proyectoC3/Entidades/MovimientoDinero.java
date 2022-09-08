@@ -88,4 +88,17 @@ public class MovimientoDinero {
     public void setModificado(Date modificado) {
         this.modificado = modificado;
     }
+
+    @Override
+    public String toString() {
+        return "MovimientoDinero{" +
+                "id=" + id +
+                ", concepto='" + concepto + '\'' +
+                ", monto=" + monto +
+                ", empleado=" + empleado +
+                ", empresa=" + empresa +
+                ", creado=" + creado +
+                ", modificado=" + modificado +
+                '}';
+    }
 }
