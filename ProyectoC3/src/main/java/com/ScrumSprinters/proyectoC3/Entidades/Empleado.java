@@ -1,5 +1,8 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -20,10 +23,10 @@ public class Empleado {
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
     private Empresa empresa;
-
+    @CreationTimestamp
     @Column(name = "created_at")
     private Date creado;
-
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private Date modificado;
 
@@ -84,5 +87,19 @@ public class Empleado {
 
     public void setModificado(Date modificado) {
         this.modificado = modificado;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", rol=" + rol +
+                ", empresa=" + empresa +
+                ", creado=" + creado +
+                ", modificado=" + modificado +
+                '}';
     }
 }

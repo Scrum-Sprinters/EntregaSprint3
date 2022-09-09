@@ -1,4 +1,7 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -22,10 +25,10 @@ public class MovimientoDinero {
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
     private Empresa empresa;
-
+    @CreationTimestamp
     @Column (name = "created_at")
     private Date creado;
-
+    @UpdateTimestamp
     @Column (name = "updated_at")
     private Date modificado;
 

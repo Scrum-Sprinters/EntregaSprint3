@@ -16,29 +16,29 @@ public class EnterpriseController {
     public EnterpriseController(){
     }
 
-    @GetMapping("/enterprise")
+    @GetMapping("/enterprises")
     public List<Empresa> getAllEnterprise(){
         return service.getAllEnterprise();
     }
-    @PostMapping("/enterprise")
+    @PostMapping("/enterprises")
     public String saveEnterprise(@RequestBody Empresa empresa){
         service.saveEnterprise(empresa);
         return "Se ingresa empresa: " + empresa.toString();
     }
 
-    @GetMapping("/enterprise/{id}")
+    @GetMapping("/enterprises/{id}")
     public Empresa getEnterpriseById(@PathVariable Long id){
         return service.getEnterpriseById(id);
     }
 
-    @PatchMapping("/enterprise/{id}")
+    @PatchMapping("/enterprises/{id}")
     public String updtadeEnterpriseById(@PathVariable Long id , @RequestBody Empresa empresa){
         empresa.setId(id);
         service.updateEnterpriseById(empresa);
         return "Se llama modificar empresa con id: " + id.toString();
     }
 
-    @DeleteMapping("enterprise/{id}")
+    @DeleteMapping("enterprises/{id}")
     public String deleteEnterpriseById(@PathVariable Long id){
         service.deleteEnterpriseById(id);
         return "Se llama borrar empresa con id: " + id.toString();
