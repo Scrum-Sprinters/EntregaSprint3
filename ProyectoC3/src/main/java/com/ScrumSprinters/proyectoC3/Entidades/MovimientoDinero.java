@@ -11,17 +11,13 @@ public class MovimientoDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @Column(name = "concept")
     private String concepto;
-
     @Column(name = "amount")
     private Float monto;
-
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Empleado empleado;
-
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
     private Empresa empresa;

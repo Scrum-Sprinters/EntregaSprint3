@@ -19,7 +19,6 @@ public class Empleado {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private EnumRole rol;
-
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
     private Empresa empresa;

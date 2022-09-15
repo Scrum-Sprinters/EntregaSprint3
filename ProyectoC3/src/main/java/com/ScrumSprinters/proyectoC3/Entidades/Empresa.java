@@ -1,5 +1,6 @@
 package com.ScrumSprinters.proyectoC3.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import net.bytebuddy.asm.Advice;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -22,13 +23,12 @@ public class Empresa {
     private String telefono;
     @Column(name="address")
     private String direccion;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa")
     private List<Empleado> empleados;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa")
     private List<MovimientoDinero> movimientoDineros;
-
     @CreationTimestamp
     @Column (name = "created_at")
     private Date creado;
