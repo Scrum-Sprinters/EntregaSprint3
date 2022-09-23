@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #1b004b;
+      }
+
+      .form-body{
+        width: 400px;
+        min-width: 300px;
+        border-radius: 10px;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        margin:10px;
+        border: double 7px #fff0ff;
+        box-shadow: 6px 6px 8px #fff0ff;
+      }
+
+      .form-body:hover {
+        background: rgba(255, 255, 255, 0.281);
+      }
+
+      .form-body img {
+        width: 150px;
+        height: 160px;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .text {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff0ff;
+        margin-bottom: 25px
+      }
+
+      .combo {
+        margin-top: 20px;
+        display: block;
+        margin:auto;
+        height: 40px;
+        width: 75%;
+        padding-left:10px;
+        color:black;
+        border: 2px solid black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: rgba(255, 255, 255, 0.452);
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      .form-body select:hover {
+        border: 2px solid white;
+      }
+
+      .form-body input[type="text"] {
+        margin-top: 20px;
+      }
+
+      .form-body input {
+        display: block;
+        margin:auto;
+        height: 40px;
+        width: 75%;
+        padding-left:10px;
+        color:rgb(0, 0, 0);
+        border-radius: 2px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: rgba(255, 255, 255, 0.39);
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      .form-body input[type="password"] {
+        margin-top: 20px;
+      }
+
+      ::placeholder {
+        font-size: 1rem;
+        color:rgb(0, 0, 0)
+      }
+
+      .form-body input:hover {
+        transition: .4s;
+        border: 2px solid rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+
+      .form-body button{
+        display:block;
+        margin:auto;
+        margin-top: 25px;
+        margin-bottom: 30px;
+        height: 40px;
+        width: 78%;
+        background:transparent;
+        color:#fff0ff;
+        border: 2px solid #fff0ff;
+        border-radius: 10px;
+        cursor: pointer;
+        outline:none;
+        transition: all .4s ease-;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .form-body button:hover {
+        border: 2px solid #1b004b;
+        background:#1b004b;
+      }
+
+      .form-body a{
+        text-decoration: none;
+      }
+
+    </style>
+  <title>Login - Sistema de Gestión</title>
+</head>
+<body>
+<div class="form-body">
+  <img src="https://cdn-icons-png.flaticon.com/512/1165/1165674.png" alt="Image user">
+  <p class="text">Bienvenidos al sistema de gestión</p>
+  <form class="Login-form">
+    <select class="combo">
+      <option value="Administrador">Administrador</option>
+      <option value="Empleado">Empleado</option>
+      <option value="Operario">Operario</option>
+    </select>
+    <input type="text" placeholder="ID">
+    <input type="password" placeholder="Contraseña">
+    <a  href="/Principal">
+      <button type="button">Iniciar Sesión</button>
+    </a>
+  </form>
+</div>
+</body>
+</html>
