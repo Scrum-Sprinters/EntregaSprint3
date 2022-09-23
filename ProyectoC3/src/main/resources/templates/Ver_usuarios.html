@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="CSS/swiper.min.css">
+  <style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
+		body {
+			position: relative;
+			min-height: 100vh;
+			width: 100%;
+			overflow: hidden;
+			min-width:fit-content;
+			background: #dac9df;
+		}
+
+		.sidebar {
+			height: 100%;
+			position: fixed;
+			top:0;
+			left:0;
+			width: 320px;
+			background: #1b004b;
+			padding-top: 20px;
+			border-right: 1px solid #000;
+		}
+
+		.sidebar .logo_content .logo{
+			color: #dac9df;
+			display:flex;
+			height: 50px;
+			width: 95%;
+			align-items: center;
+			margin-bottom: 50px;
+		}
+
+		.logo_content .logo i{
+			font-size: 45px;
+			margin-right: 5px;
+			margin-left: 7%;
+		}
+
+		.logo_content .logo_name{
+			font-size: 24px;
+			font-weight: 400;
+			margin-left: 3%;
+			top:50%;
+		}
+
+		.sidebar .logo_content #btn_menu{
+			position: absolute;
+			color:#dac9df;
+			left: 79%;
+			font-size: 20px;
+			height: 35px;
+			width: 35px;
+			text-align: center;
+			line-height: 35px;
+			transform: translate(-50%);
+			border: 0.5px solid rgb(255, 255, 255);
+			border-radius: 15%;
+		}
+
+		.sidebar .logo_content #btn_menu:hover{
+			color:#dac9df;
+			border: 0.5px solid #dac9df;
+			border-radius: 15%;
+			background-color: #dac9df25;
+		}
+
+		.sidebar ul{
+			margin-top: 20px;
+		}
+
+		.sidebar ul li{
+			height: 50px;
+			width: 86%;
+			margin: 0 22px;
+			list-style: none;
+			position: relative;
+			margin-bottom: 20px;
+		}
+
+		.sidebar ul li a{
+			color:#dac9df;
+			display:flex;
+			align-items: center;
+			text-decoration: none;
+			border: 2px solid #dac9df;
+			border-bottom-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+
+		.sidebar ul #principal{
+			background: rgba(214, 210, 210, 0.623);
+			border-bottom-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+
+		.sidebar ul li a:hover{
+			color:rgb(0, 0, 0);
+			border: 1px solid  #000000;
+			background: #dac9df;
+			box-shadow: 3px 3px 2px black;
+			border-bottom-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+
+		.sidebar ul li a i{
+			height: 50px;
+			min-width: 50px;
+			border-radius: 12px;
+			line-height:50px;
+			text-align: center;
+		}
+
+		.sidebar .perfil_content{
+			position: absolute;
+			color:#dac9df;
+			bottom:0;
+			left:0;
+			width: 100%;
+		}
+
+		.sidebar .perfil_content .perfil{
+			position: relative;
+			display: flex;
+			padding: 10px 6px;
+			height: 80px;
+			width: 90%;
+			margin: 0px 15px 10px 15px;
+			background-color: rgba(255, 255, 255, 0.1);
+			border: 1px solid #dac9df;
+			border-bottom-left-radius: 15px;
+			border-top-right-radius: 15px;
+
+		}
+
+		.perfil_content .perfil .perfil_details{
+			display:flex;
+			align-items: center;
+
+		}
+
+		.perfil .perfil_details img{
+			height: 50px;
+			width: 50px;
+			object-fit: cover;
+			border-radius: 12px;
+			border: 1px solid #dac9df;
+		}
+
+		.perfil .perfil_details .person{
+			margin-left: 7px;
+		}
+
+		.perfil .perfil_details .person .rol{
+			font-size: 14px;
+			font-weight: 400;
+		}
+
+		.perfil .perfil_details .person .name{
+			font-size: 12px;
+			font-weight: 400;
+		}
+
+		.perfil .perfil_details .person .empresa{
+			font-size: 12px;
+			font-weight: 400;
+		}
+
+		.perfil #foto{
+			position:absolute;
+			height: 30px;
+			left: 85%;
+			width: 30px;
+			font-size: 25px;
+			top:35%;
+			color:#dac9df;
+		}
+
+		.perfil #foto:hover{
+			background: #dac9df15;
+			color:#dac9df;
+			border: 1px solid #dac9df;
+			border-radius: 5px;;
+		}
+
+		.home {
+			position: absolute;
+			height: 100hv;
+			width: calc(100% - 320px);
+			left: 320px;
+			background: #dac9df;
+		}
+
+		.home .text{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 150px;
+			background: #1b004b;
+			color:#dac9df;
+			font-size: 5vh;
+			font-weight: 500;
+			border:2px;
+			margin: 5px;
+			margin-bottom:0;
+			border-bottom: 0px;
+			border-style: solid;
+			border-color: rgb(0, 0, 0);
+			border-top-right-radius: 15px;
+			border-top-left-radius: 15px;;
+		}
+
+		.home .contenedor {
+			margin: 5px;
+			margin-top: 0;
+			padding: 0;
+			min-height: calc(100vh - 160px);
+			border: 5px solid #1b004b;
+			border-bottom-left-radius: 15px;
+			border-bottom-right-radius: 15px;
+		}
+
+		.home .text2{
+			display: flex;
+			align-items: center;
+			height: 50px;
+			width: 20%;
+			color:#1b004b;
+			font-size: 25px;
+			font-weight: 500;
+			margin: 35px 0px 0px 60px;
+			border-bottom: 5px solid #1b004b;
+		}
+
+		.home .contenedor .cont{
+			display: flex;
+		}
+
+		.home .contenedor .cont .boton{
+			height: 50px;
+			margin: 35px 60px 0px 0px;
+			width: calc(80% - 120px);
+		}
+
+		.boton .button_nuevo{
+			font-size: 17px;
+			font-weight: 500;
+			margin-left: calc(100% - 100px);
+      height: 50px;
+      width: 100px;
+      background:transparent;
+      color:#1b004b;
+      border: 2px solid #1b004b;
+      border-bottom-left-radius: 15px;
+			border-top-right-radius: 15px;
+      cursor: pointer;
+      outline:none;
+      transition: all .4s ease-;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
+		.button_nuevo:hover {
+			background:#1b004b75;
+			color: #dac9df;
+		}
+
+		.cont_table{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin:40px 60px;
+		}
+
+		.table{
+			empty-cells: show;
+			width: 100%;
+			border-radius: 15px;
+		}
+
+		.table thead th{
+			font-size: 22px;
+			background:#1b004b;
+			color:#dac9df;
+			height: 55px;
+			border-radius: 5px;
+		}
+
+		.table tr td{
+			border: 2px solid #1b004b;
+			height: 50px;
+			border-radius: 5px;
+			text-align: center;
+			font-size: 15px;
+		}
+
+		.table tr:hover{
+			background: #1b004b80;
+			color:#dac9df;
+		}
+	</style>
+  <title>Inicio - Sistema de Gestión</title>
+</head>
+<body>
+<div class="sidebar">
+  <div class="logo_content">
+    <div class="logo">
+      <i class='bx bx-objects-vertical-bottom'></i>
+      <div class="logo_name"><b>S.I.G</b></div>
+      <i class='bx bx-menu' id="btn_menu"></i>
+    </div>
+  </div>
+  <ul class="nav_list">
+    <li id="principal">
+      <a href="/Principal">
+        <i class='bx bx-home-alt-2'></i>
+        <span class="link_name">Página principal</span>
+      </a>
+      <!-- <span class="tooltip">Página principal</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-money'></i>
+        <span class="link_name">Ingresos y egresos</span>
+      </a>
+      <!-- <span class="tooltip">Página principal</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-user'></i>
+        <span class="link_name">Empleados</span>
+      </a>
+      <!-- <span class="tooltip">Página principal</span> -->
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-buildings'></i>
+        <span class="link_name">Empresas</span>
+      </a>
+      <!-- <span class="tooltip">Página principal</span> -->
+    </li>
+  </ul>
+  <div class="perfil_content">
+    <div class="perfil">
+      <div class="perfil_details">
+        <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="profile_img.png">
+        <div class="person">
+          <div class="rol"><b>Rol</b></div>
+          <div class="name">Nombre</div>
+          <div class="empresa">Empresa</div>
+        </div>
+      </div>
+      <a href="/"><i class='bx bx-log-out' id="foto"></i></a>
+    </div>
+  </div>
+</div>
+<div class="home">
+  <div class="text">
+    <b>SISTEMA DE GESTIÓN DE INGRESOS Y GASTOS</b>
+  </div>
+  <div class="contenedor">
+    <div class="cont">
+      <div class="text2">
+        <b>Usuarios</b>
+      </div>
+      <div class="boton">
+        <button class="button_nuevo" role="link" onclick="location.href='/Principal/Ver_usuarios/Nuevo_usuario'">Nuevo</button>
+      </div>
+    </div>
+    <div class="cont_table">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+        </tr>
+        </thead>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>
